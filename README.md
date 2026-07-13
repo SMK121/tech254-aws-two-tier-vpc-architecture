@@ -60,60 +60,18 @@ The following diagram shows the planned AWS two-tier architecture before impleme
 ![AWS Two Tier Architecture Diagram](https://github.com/user-attachments/assets/51a0dfec-cdf0-446e-a315-e38e4a7964d4)
 
 
+# 🌐 VPC and Subnet Setup
 
-# Step 2 - Create Public and Private Subnets
+A custom VPC was created to provide an isolated AWS network for the two-tier architecture.
 
-## Public Application Subnet
+The VPC contains two subnets:
 
-Purpose:
-
-- Hosts application EC2 instance
-- Allows external user access
-
-Configuration:
-
-- CIDR: `10.0.2.0/24`
-
-Screenshot:
-
-(Add public subnet screenshot)
-
-![Public Subnet](./screenshots/public-subnet.png)
-
-
----
-
-## Private Database Subnet
-
-Purpose:
-
-- Hosts MongoDB database
-- Prevents direct internet access
+- **Public Subnet** - Hosts the application EC2 instance and allows internet access through the Internet Gateway.
+- **Private Subnet** - Hosts the MongoDB database EC2 instance and restricts direct internet access.
 
 Configuration:
 
-- CIDR: `10.0.3.0/24`
-
-Screenshot:
-
-(Add private subnet screenshot)
-
-![Private Subnet](./screenshots/private-subnet.png)
 
 
----
-
-# Step 3 - Configure Routing
-
-## Internet Gateway
-
-Allows public subnet resources to communicate with the internet.
-
-Screenshot:
-
-(Add Internet Gateway screenshot)
 
 
-## Route Tables
-
-Public route:
