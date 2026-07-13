@@ -101,14 +101,27 @@ This confirms the application and database layers were separated correctly withi
 
 # 🔒 Security Groups
 
+# 🔒 Security Groups
+
 Security Groups were created to control traffic between the application and database tiers.
 
-### Application Security Group
+## Application Security Group
 
-Allows:
+The application server uses a Security Group to allow web traffic from users and secure administrative access.
 
-- HTTP (Port 80) for users accessing the application
-- SSH (Port 22) for administration
+Inbound rules:
+
+| Type | Port | Source | Purpose |
+|-|-|-|-|
+| HTTP | 80 | 0.0.0.0/0 | Allows users to access the web application |
+| SSH | 22 | My IP (2.102.169.57/32) | Allows secure administration access |
+
+
+
+### Screenshot
+
+![Application Security Group](https://github.com/user-attachments/assets/b7904eb8-57b1-4b40-942b-d6fcec88a000)
+
 
 
 ### Database Security Group
