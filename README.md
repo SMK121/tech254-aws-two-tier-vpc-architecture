@@ -182,7 +182,7 @@ Verified:
 ### Final Application Screenshot
 
 ![Working Tic Tac Toe Application](https://github.com/user-attachments/assets/bcdf8172-9e7c-4c02-bd38-6921ff7725fc)
-)
+
 
 
 
