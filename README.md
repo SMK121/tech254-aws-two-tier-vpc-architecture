@@ -115,7 +115,7 @@ Allows:
 
 Allows:
 
-- MongoDB (Port 27017) communication from the application server
+- MongoDB (Port 27017) communication only from the application subnet
 - SSH (Port 22) for administration
 
 
