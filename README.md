@@ -57,8 +57,7 @@ The planned traffic flow is:
 
 The following diagram shows the planned AWS two-tier architecture before implementation:
 
-![AWS Two Tier Architecture Diagram](<img width="1020" height="1447" alt="Two Tier Architecture Diagram" src="https://github.com/user-attachments/assets/51a0dfec-cdf0-446e-a315-e38e4a7964d4" />
-)
+![AWS Two Tier Architecture Diagram](https://github.com/user-attachments/assets/51a0dfec-cdf0-446e-a315-e38e4a7964d4)
 
 
 
