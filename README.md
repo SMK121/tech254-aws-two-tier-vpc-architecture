@@ -101,8 +101,6 @@ This confirms the application and database layers were separated correctly withi
 
 # 🔒 Security Groups
 
-# 🔒 Security Groups
-
 Security Groups were created to control traffic between the application and database tiers.
 
 ## Application Security Group
@@ -124,13 +122,20 @@ Inbound rules:
 
 
 
-### Database Security Group
+## Database Security Group
 
-Allows:
+The database server uses a restricted Security Group because MongoDB should not be publicly accessible.
 
-- MongoDB (Port 27017) communication only from the application subnet
-- SSH (Port 22) for administration
+Inbound rules:
 
+| Type | Port | Source | Purpose |
+|-|-|-|-|
+| Custom TCP | 27017 | 10.0.2.0/24 | Allows MongoDB communication from the application subnet |
+| SSH | 22 | My IP | Allows secure administration access |
+
+### Screenshot
+
+![Database Security Group](https://github.com/user-attachments/assets/0bfcd220-8739-4985-b3cc-6515fae6a94a)
 
 ---
 
