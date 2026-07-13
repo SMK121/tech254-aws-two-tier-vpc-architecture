@@ -81,6 +81,24 @@ The application is placed in the public subnet so users can access it, while the
 
 
 
+## VPC Resource Map
+
+The AWS VPC Resource Map provides a visual overview of the network design.
+
+It shows the relationship between:
+
+- The custom VPC
+- Public and private subnets
+- Route tables
+- Internet Gateway connection
+
+This confirms the application and database layers were separated correctly within the VPC before deploying the EC2 instances.
+
+![VPC Resource Map](https://github.com/user-attachments/assets/796c47f1-e0ed-48d7-8b3d-f2ed2abb4498)
+
+
+
+
 # 🔒 Security Groups
 
 Security Groups were created to control traffic between the application and database tiers.
@@ -102,25 +120,6 @@ Allows:
 
 
 ---
-
-## VPC Resource Map
-
-The AWS VPC Resource Map provides a visual overview of the network design.
-
-It shows the relationship between:
-
-- The custom VPC
-- Public and private subnets
-- Route tables
-- Internet Gateway connection
-
-This confirms the application and database layers were separated correctly within the VPC before deploying the EC2 instances.
-
-![VPC Resource Map](https://github.com/user-attachments/assets/796c47f1-e0ed-48d7-8b3d-f2ed2abb4498)
-
-
-
-
 
 # 🖥️ EC2 Deployment
 
