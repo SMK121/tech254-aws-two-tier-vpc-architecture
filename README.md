@@ -1,6 +1,6 @@
 # 🚀 AWS Two-Tier Architecture Deployment with VPC, EC2 and MongoDB
 
-## 📌 Project Overview
+## 📌 Task Overview
 
 This project demonstrates the design and deployment of a secure two-tier architecture on AWS.
 
@@ -22,6 +22,20 @@ The deployment uses:
 - MongoDB database
 - Nginx reverse proxy
 - PM2 process management
+
+
+## 🛠️ Technology Stack
+
+- AWS EC2
+- AWS VPC
+- Security Groups
+- Internet Gateway
+- Route Tables
+- Ubuntu Linux
+- Nginx
+- Node.js
+- MongoDB
+- PM2
 
 
 ---
@@ -137,6 +151,8 @@ Inbound rules:
 
 ![Database Security Group](https://github.com/user-attachments/assets/0bfcd220-8739-4985-b3cc-6515fae6a94a)
 
+
+
 ---
 
 # 🖥️ EC2 Deployment
@@ -216,6 +232,9 @@ Verified:
 
 ![Working Tic Tac Toe Application](https://github.com/user-attachments/assets/bcdf8172-9e7c-4c02-bd38-6921ff7725fc)
 
+
+
+The final deployment successfully demonstrates a secure AWS two-tier architecture where the public application layer communicates with a private MongoDB database layer using VPC networking.
 
 
 
