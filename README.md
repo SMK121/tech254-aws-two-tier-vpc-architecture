@@ -181,7 +181,7 @@ Verified:
 
 ### Final Application Screenshot
 
-![Working Tic Tac Toe Application](<img width="1891" height="1839" alt="Application Verification" src="https://github.com/user-attachments/assets/bcdf8172-9e7c-4c02-bd38-6921ff7725fc" />
+![Working Tic Tac Toe Application](https://github.com/user-attachments/assets/bcdf8172-9e7c-4c02-bd38-6921ff7725fc)
 )
 
 
