@@ -2,7 +2,7 @@
 
 ## 📌 Task Overview
 
-This project demonstrates the design and deployment of a secure two-tier architecture on AWS.
+This task demonstrates the design and deployment of a secure two-tier architecture on AWS.
 
 The architecture separates the application and database layers by placing:
 
