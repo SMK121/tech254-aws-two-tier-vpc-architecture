@@ -116,8 +116,7 @@ It shows the relationship between:
 
 This confirms the application and database layers were separated correctly within the VPC before deploying the EC2 instances.
 
-![VPC Resource Map](<img width="2603" height="676" alt="Resource Map" src="https://github.com/user-attachments/assets/796c47f1-e0ed-48d7-8b3d-f2ed2abb4498" />
-)
+![VPC Resource Map](https://github.com/user-attachments/assets/796c47f1-e0ed-48d7-8b3d-f2ed2abb4498)
 
 
 
