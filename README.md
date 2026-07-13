@@ -26,45 +26,39 @@ The deployment uses:
 
 ---
 
-# 🏗️ AWS Two-Tier Architecture Diagram
+# 🏗️ AWS Two-Tier Architecture Design
 
-```mermaid
+## Overview
 
-flowchart TD
+Before implementing the AWS infrastructure, the architecture was planned to separate the application and database layers using a two-tier design.
 
-    User[User / Browser]
+The application server is deployed inside a **public subnet** so users can access the web application through the internet. The database server is deployed inside a **private subnet** to prevent direct public access and improve security.
 
-    Internet[Internet]
+The architecture uses:
 
-    IGW[Internet Gateway]
+- A custom VPC for network isolation
+- Public subnet for the application tier
+- Private subnet for the database tier
+- Security Groups to control communication
+- EC2 instances created from custom AMIs
+- Private communication between the application and MongoDB database
 
-    subgraph VPC[tech610-suhaib-2tier-first-vpc]
+The planned traffic flow is:
 
-        subgraph Public[Public Subnet - 10.0.2.0/24]
+1. User accesses the application through the internet.
+2. Traffic reaches the Application EC2 instance through the Internet Gateway.
+3. Nginx forwards requests to the Node.js application.
+4. The application communicates with MongoDB using the private IP address.
+5. The database stores application data securely inside the private subnet.
 
-            App[Application EC2 VM<br/>
-            Node.js + PM2 + Nginx<br/>
-            Private IP: 10.0.2.124<br/>
-            Public IP: 54.74.79.228]
+---
 
-        end
+## Architecture Diagram
 
-        subgraph Private[Private Subnet - 10.0.3.0/24]
+The following diagram shows the planned AWS two-tier architecture before implementation:
 
-            DB[Database EC2 VM<br/>
-            MongoDB<br/>
-            Private IP: 10.0.3.93]
-
-        end
-
-    end
-
-    User --> Internet
-    Internet --> IGW
-    IGW --> App
-
-    App -->|MongoDB Port 27017| DB
-```
+![AWS Two Tier Architecture Diagram](<img width="1020" height="1447" alt="Two Tier Architecture Diagram" src="https://github.com/user-attachments/assets/51a0dfec-cdf0-446e-a315-e38e4a7964d4" />
+)
 
 
 
