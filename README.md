@@ -62,16 +62,145 @@ The following diagram shows the planned AWS two-tier architecture before impleme
 
 # 🌐 VPC and Subnet Setup
 
-A custom VPC was created to provide an isolated AWS network for the two-tier architecture.
+
+VPC:
+tech610-suhaib-2tier-first-vpc
+
+CIDR:
+10.0.0.0/16
+
 
 The VPC contains two subnets:
 
-- **Public Subnet** - Hosts the application EC2 instance and allows internet access through the Internet Gateway.
-- **Private Subnet** - Hosts the MongoDB database EC2 instance and restricts direct internet access.
+| Subnet | Purpose | CIDR |
+|-|-|-|
+| Public Subnet | Application EC2 instance | 10.0.2.0/24 |
+| Private Subnet | MongoDB Database EC2 instance | 10.0.3.0/24 |
+
+The application is placed in the public subnet so users can access it, while the database remains private for security.
+
+
+### Screenshot
+
+![VPC and Subnets](ADD_VPC_SCREENSHOT)
+
+
+---
+
+# 🔒 Security Groups
+
+Security Groups were created to control traffic between the application and database tiers.
+
+### Application Security Group
+
+Allows:
+
+- HTTP (Port 80) for users accessing the application
+- SSH (Port 22) for administration
+
+
+### Database Security Group
+
+Allows:
+
+- MongoDB (Port 27017) communication from the application server
+- SSH (Port 22) for administration
+
+
+### Screenshot
+
+![Security Groups](ADD_SECURITY_GROUP_SCREENSHOT)
+
+
+---
+
+# 🖥️ EC2 Deployment
+
+Custom AMIs were used to deploy both servers.
+
+
+## Application Server
+
+Deployed using:
+
+
+AMI:
+tech610-Suhaib-ready-to-run-ttt-app-image
+
 
 Configuration:
 
 
+Subnet:
+tech610-suhaib-public-subnet
+
+Private IP:
+10.0.2.124
+
+Public IP:
+54.74.79.228
+
+
+Runs:
+
+- Nginx
+- Node.js application
+- PM2
+
+
+### Screenshot
+
+![Application EC2](ADD_APP_INSTANCE_SCREENSHOT)
+
+
+---
+
+## Database Server
+
+Deployed using:
+
+
+AMI:
+tech610-Suhaib-ready-to-run-ttt-db-image
+
+
+Configuration:
+
+
+Subnet:
+tech610-suhaib-private-subnet
+
+Private IP:
+10.0.3.93
+
+
+Runs:
+
+- MongoDB database
+
+
+### Screenshot
+
+![Database EC2](ADD_DB_INSTANCE_SCREENSHOT)
+
+
+---
+
+# ✅ Final Application Verification
+
+The completed deployment was tested by accessing the application through the Application EC2 public IP.
+
+Verified:
+
+✅ Application loads successfully  
+✅ Application connects to MongoDB  
+✅ Data is persisted using the database server  
+✅ Two-tier architecture is working correctly  
+
+
+### Final Application Screenshot
+
+![Working Tic Tac Toe Application](ADD_BROWSER_SCREENSHOT)
 
 
 
