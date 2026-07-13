@@ -26,33 +26,47 @@ The deployment uses:
 
 ---
 
-# 🏗️ Planned Architecture Diagram
+# 🏗️ AWS Two-Tier Architecture Diagram
 
-(Add architecture diagram here)
+```mermaid
 
-![AWS Two Tier Architecture](./diagrams/aws-two-tier-diagram.png)
+flowchart TD
+
+    User[User / Browser]
+
+    Internet[Internet]
+
+    IGW[Internet Gateway]
+
+    subgraph VPC[tech610-suhaib-2tier-first-vpc]
+
+        subgraph Public[Public Subnet - 10.0.2.0/24]
+
+            App[Application EC2 VM<br/>
+            Node.js + PM2 + Nginx<br/>
+            Private IP: 10.0.2.124<br/>
+            Public IP: 54.74.79.228]
+
+        end
+
+        subgraph Private[Private Subnet - 10.0.3.0/24]
+
+            DB[Database EC2 VM<br/>
+            MongoDB<br/>
+            Private IP: 10.0.3.93]
+
+        end
+
+    end
+
+    User --> Internet
+    Internet --> IGW
+    IGW --> App
+
+    App -->|MongoDB Port 27017| DB
+```
 
 
----
-
-# 📋 Implementation Plan
-
-## Step 1 - Create VPC
-
-Create a dedicated VPC to isolate AWS resources.
-
-Configuration:
-
-- VPC CIDR: `10.0.0.0/16`
-
-Screenshot:
-
-(Add VPC screenshot here)
-
-![VPC Creation](./screenshots/vpc.png)
-
-
----
 
 # Step 2 - Create Public and Private Subnets
 
