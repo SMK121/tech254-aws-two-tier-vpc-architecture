@@ -82,9 +82,6 @@ The application is placed in the public subnet so users can access it, while the
 
 ### Screenshot
 
-![VPC and Subnets](ADD_VPC_SCREENSHOT)
-
-
 ---
 
 # 🔒 Security Groups
@@ -105,11 +102,6 @@ Allows:
 
 - MongoDB (Port 27017) communication from the application server
 - SSH (Port 22) for administration
-
-
-### Screenshot
-
-![Security Groups](ADD_SECURITY_GROUP_SCREENSHOT)
 
 
 ---
@@ -147,12 +139,6 @@ Runs:
 - Node.js application
 - PM2
 
-
-### Screenshot
-
-![Application EC2](ADD_APP_INSTANCE_SCREENSHOT)
-
-
 ---
 
 ## Database Server
@@ -178,13 +164,8 @@ Runs:
 
 - MongoDB database
 
-
-### Screenshot
-
-![Database EC2](ADD_DB_INSTANCE_SCREENSHOT)
-
-
 ---
+
 
 # ✅ Final Application Verification
 
@@ -200,7 +181,8 @@ Verified:
 
 ### Final Application Screenshot
 
-![Working Tic Tac Toe Application](ADD_BROWSER_SCREENSHOT)
+![Working Tic Tac Toe Application](<img width="1891" height="1839" alt="Application Verification" src="https://github.com/user-attachments/assets/bcdf8172-9e7c-4c02-bd38-6921ff7725fc" />
+)
 
 
 
